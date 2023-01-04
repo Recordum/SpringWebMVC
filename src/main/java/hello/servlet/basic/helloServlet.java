@@ -5,15 +5,16 @@ import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
 @WebServlet(name = "helloServlet", urlPatterns = "/hello")
 public class helloServlet extends HttpServlet {
 
-
     @Override
-    public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         System.out.println("helloServlet.service");
         System.out.println("request = " + request);
@@ -27,4 +28,3 @@ public class helloServlet extends HttpServlet {
         response.getWriter().write("hello " + username);
     }
 }
-;
