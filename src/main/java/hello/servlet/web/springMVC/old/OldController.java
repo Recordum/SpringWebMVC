@@ -15,6 +15,6 @@ public class OldController implements Controller {
         System.out.println("oldController.handleRequest");
         System.out.println(request.getMethod());
 
-        return null;
+        return new ModelAndView("new-form");
     }
 }
